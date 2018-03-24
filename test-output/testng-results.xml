@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="77207" started-at="2018-03-24T09:25:31Z" finished-at="2018-03-24T09:26:48Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="77207" started-at="2018-03-24T09:25:31Z" finished-at="2018-03-24T09:26:48Z">
+      <class name="mobileAutomation.Ebay">
+        <test-method status="PASS" signature="startTest()[pri:0, instance:mobileAutomation.Ebay@bfbc86]" name="startTest" is-config="true" duration-ms="774" started-at="2018-03-24T14:55:31Z" finished-at="2018-03-24T14:55:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTest -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:mobileAutomation.Ebay@bfbc86]" name="setUp" is-config="true" duration-ms="4892" started-at="2018-03-24T14:55:32Z" finished-at="2018-03-24T14:55:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="BuyPhone()[pri:0, instance:mobileAutomation.Ebay@bfbc86]" name="BuyPhone" duration-ms="65515" started-at="2018-03-24T14:55:36Z" finished-at="2018-03-24T14:56:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BuyPhone -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:mobileAutomation.Ebay@bfbc86]" name="tearDown" is-config="true" duration-ms="5119" started-at="2018-03-24T14:56:42Z" finished-at="2018-03-24T14:56:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="endReport()[pri:0, instance:mobileAutomation.Ebay@bfbc86]" name="endReport" is-config="true" duration-ms="886" started-at="2018-03-24T14:56:47Z" finished-at="2018-03-24T14:56:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endReport -->
+      </class> <!-- mobileAutomation.Ebay -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

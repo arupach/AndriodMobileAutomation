@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <parameter name="deviceQuery" value="@os=&#039;android&#039;"/>
+  <test name="TestAndroid(failed)" parallel="tests">
+    <parameter name="deviceQuery" value="@os=&#039;android&#039;"/>
+    <classes>
+      <class name="mobileAutomation.Ebay">
+        <methods>
+          <include name="setUp"/>
+          <include name="testUntitled"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- mobileAutomation.Ebay -->
+    </classes>
+  </test> <!-- TestAndroid(failed) -->
+</suite> <!-- Failed suite [Suite] -->
