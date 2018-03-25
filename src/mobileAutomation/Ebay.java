@@ -26,7 +26,6 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
@@ -38,9 +37,8 @@ public class Ebay {
 	DateFormat df;
 	ExtentReports extent;
 	ExtentTest logger;
-
+	FileInputStream fileInput = null;
 	protected AndroidDriver<AndroidElement> driver = null;
-
 	DesiredCapabilities dc = new DesiredCapabilities();
 
 	@BeforeMethod
@@ -65,80 +63,11 @@ public class Ebay {
 	}
 
 	@Test
-	public void BuyPhone() throws Exception {
+	public void EbayAppTransactions() throws IOException {
 
-
-		File file = new File(System.getProperty("user.dir")+"\\src\\com\\config\\OR.properties");
-
-		FileInputStream fileInput = null;
-		try {
-			fileInput = new FileInputStream(file);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		Properties prop = new Properties();
-
-		//load properties file
-		try {
-			prop.load(fileInput);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		driver.context(prop.getProperty("AppType"));
-
-		driver.findElement(By.xpath(prop.getProperty("AppDescription"))).click();
-
-		driver.executeScript(prop.getProperty("ScrollDown"));
-
-		driver.findElement(By.xpath(prop.getProperty("ebayIcon"))).click();
-
-		driver.findElement(By.xpath(prop.getProperty("SignInButton"))).click();
-		captureScreenShots();
-		//Handling Mobile Screen Rotation. Changing it to landscape
-		driver.rotate(ScreenOrientation.LANDSCAPE);
-
-		new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("username"))));
-		driver.findElement(By.xpath(prop.getProperty("username"))).clear();
-		driver.findElement(By.xpath(prop.getProperty("username"))).sendKeys(prop.getProperty("usernameValue"));
-
-		new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("password"))));
-		driver.findElement(By.xpath(prop.getProperty("password"))).sendKeys(prop.getProperty("passwordValue"));
-
-		new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("SignInButton2"))));
-		driver.findElement(By.xpath(prop.getProperty("SignInButton2"))).click();
-		captureScreenShots();
-
-		new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("NoThanks"))));
-		driver.findElement(By.xpath(prop.getProperty("NoThanks"))).click();
-		captureScreenShots();
-
-		//Handling Mobile Screen Rotation. Changing it to Portrait again
-		driver.rotate(ScreenOrientation.PORTRAIT);
-
-		new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("SearchBox"))));
-		driver.findElement(By.xpath(prop.getProperty("SearchBox"))).click();
-
-		new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("SearchBoxText"))));
-		driver.findElement(By.xpath(prop.getProperty("SearchBoxText"))).sendKeys(prop.getProperty("ModelName"));
-		captureScreenShots();
-		driver.getKeyboard().sendKeys("{ENTER}");
-
-		new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("PhoneName"))));
-		driver.findElement(By.xpath(prop.getProperty("PhoneName"))).click();
-		captureScreenShots();
-
-		new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("BuyNowButton"))));
-		driver.findElement(By.xpath(prop.getProperty("BuyNowButton"))).click();
-		captureScreenShots();
-		//Till buy it now screen
-
-		logger = extent.startTest("BuyPhone");
-		Assert.assertTrue(true);
-		logger.log(LogStatus.PASS, "Test Case passed");
-		extent.endTest(logger);
+		StartEbayApp();
+		LoginEbay();
+		SearchAndPurchase();
 	}
 
 	@AfterMethod
@@ -163,5 +92,87 @@ public class Ebay {
 	public void endReport(){
 		extent.flush();
 		extent.close();
+	}
+
+	public void LoginEbay() throws IOException{
+
+		File file = new File(System.getProperty("user.dir")+"\\src\\com\\config\\OR.properties");
+		fileInput = new FileInputStream(file);
+		Properties prop = new Properties();
+		prop.load(fileInput);
+
+		new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("username"))));
+		driver.findElement(By.xpath(prop.getProperty("username"))).clear();
+		driver.findElement(By.xpath(prop.getProperty("username"))).sendKeys(prop.getProperty("usernameValue"));
+
+		new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("password"))));
+		driver.findElement(By.xpath(prop.getProperty("password"))).sendKeys(prop.getProperty("passwordValue"));
+
+		new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("SignInButton2"))));
+		driver.findElement(By.xpath(prop.getProperty("SignInButton2"))).click();
+		captureScreenShots();
+
+		new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("NoThanks"))));
+		driver.findElement(By.xpath(prop.getProperty("NoThanks"))).click();
+		captureScreenShots();
+		
+		logger = extent.startTest("LoginEbay- Logged in to ebay App");
+		Assert.assertTrue(true);
+		logger.log(LogStatus.PASS, "Test Case passed");
+		extent.endTest(logger);
+	}
+
+	public void StartEbayApp() throws IOException{
+		File file = new File(System.getProperty("user.dir")+"\\src\\com\\config\\OR.properties");
+		fileInput = new FileInputStream(file);
+		Properties prop = new Properties();
+		prop.load(fileInput);
+
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.context(prop.getProperty("AppType"));
+		driver.findElement(By.xpath(prop.getProperty("AppDescription"))).click();
+		driver.executeScript(prop.getProperty("ScrollDown"));
+		driver.findElement(By.xpath(prop.getProperty("ebayIcon"))).click();
+		driver.findElement(By.xpath(prop.getProperty("SignInButton"))).click();
+		captureScreenShots();
+		//Handling Mobile Screen Rotation. Changing it to landscape
+		driver.rotate(ScreenOrientation.LANDSCAPE);
+		
+		logger = extent.startTest("StartEbayApp- App Started");
+		Assert.assertTrue(true);
+		logger.log(LogStatus.PASS, "Test Case passed");
+		extent.endTest(logger);
+	}
+
+	public void SearchAndPurchase() throws IOException
+	{
+		File file = new File(System.getProperty("user.dir")+"\\src\\com\\config\\OR.properties");
+		fileInput = new FileInputStream(file);
+		Properties prop = new Properties();
+		prop.load(fileInput);
+		
+		//Handling Mobile Screen Rotation. Changing it to Portrait again
+		driver.rotate(ScreenOrientation.PORTRAIT);
+		new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("SearchBox"))));
+		driver.findElement(By.xpath(prop.getProperty("SearchBox"))).click();
+
+		new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("SearchBoxText"))));
+		driver.findElement(By.xpath(prop.getProperty("SearchBoxText"))).sendKeys(prop.getProperty("ModelName"));
+		captureScreenShots();
+		driver.getKeyboard().sendKeys("{ENTER}");
+
+		new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("PhoneName"))));
+		driver.findElement(By.xpath(prop.getProperty("PhoneName"))).click();
+		captureScreenShots();
+
+		new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.xpath(prop.getProperty("BuyNowButton"))));
+		driver.findElement(By.xpath(prop.getProperty("BuyNowButton"))).click();
+		captureScreenShots();
+		//Till buy it now screen
+
+		logger = extent.startTest("SearchAndPurchase - Searched and Purchased");
+		Assert.assertTrue(true);
+		logger.log(LogStatus.PASS, "Test Case passed");
+		extent.endTest(logger);
 	}
 }

@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="77207" started-at="2018-03-24T09:25:31Z" finished-at="2018-03-24T09:26:48Z">
+  <suite name="Default suite" duration-ms="76028" started-at="2018-03-25T05:47:37Z" finished-at="2018-03-25T05:48:54Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="77207" started-at="2018-03-24T09:25:31Z" finished-at="2018-03-24T09:26:48Z">
+    <test name="Default test" duration-ms="76028" started-at="2018-03-25T05:47:37Z" finished-at="2018-03-25T05:48:54Z">
       <class name="mobileAutomation.Ebay">
-        <test-method status="PASS" signature="startTest()[pri:0, instance:mobileAutomation.Ebay@bfbc86]" name="startTest" is-config="true" duration-ms="774" started-at="2018-03-24T14:55:31Z" finished-at="2018-03-24T14:55:32Z">
+        <test-method status="PASS" signature="startTest()[pri:0, instance:mobileAutomation.Ebay@bfbc86]" name="startTest" is-config="true" duration-ms="516" started-at="2018-03-25T11:17:37Z" finished-at="2018-03-25T11:17:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startTest -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:mobileAutomation.Ebay@bfbc86]" name="setUp" is-config="true" duration-ms="4892" started-at="2018-03-24T14:55:32Z" finished-at="2018-03-24T14:55:36Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:mobileAutomation.Ebay@bfbc86]" name="setUp" is-config="true" duration-ms="4255" started-at="2018-03-25T11:17:38Z" finished-at="2018-03-25T11:17:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="BuyPhone()[pri:0, instance:mobileAutomation.Ebay@bfbc86]" name="BuyPhone" duration-ms="65515" started-at="2018-03-24T14:55:36Z" finished-at="2018-03-24T14:56:42Z">
+        <test-method status="PASS" signature="EbayAppTransactions()[pri:0, instance:mobileAutomation.Ebay@bfbc86]" name="EbayAppTransactions" duration-ms="63662" started-at="2018-03-25T11:17:42Z" finished-at="2018-03-25T11:18:46Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- BuyPhone -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:mobileAutomation.Ebay@bfbc86]" name="tearDown" is-config="true" duration-ms="5119" started-at="2018-03-24T14:56:42Z" finished-at="2018-03-24T14:56:47Z">
+        </test-method> <!-- EbayAppTransactions -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:mobileAutomation.Ebay@bfbc86]" name="tearDown" is-config="true" duration-ms="6770" started-at="2018-03-25T11:18:46Z" finished-at="2018-03-25T11:18:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:mobileAutomation.Ebay@bfbc86]" name="endReport" is-config="true" duration-ms="886" started-at="2018-03-24T14:56:47Z" finished-at="2018-03-24T14:56:48Z">
+        <test-method status="PASS" signature="endReport()[pri:0, instance:mobileAutomation.Ebay@bfbc86]" name="endReport" is-config="true" duration-ms="809" started-at="2018-03-25T11:18:53Z" finished-at="2018-03-25T11:18:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->

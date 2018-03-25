@@ -6,8 +6,9 @@
       <class name="mobileAutomation.Ebay">
         <methods>
           <include name="setUp"/>
-          <include name="BuyPhone"/>
           <include name="startTest"/>
+          <include name="endReport"/>
+          <include name="EbayAppTransactions"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- mobileAutomation.Ebay -->
