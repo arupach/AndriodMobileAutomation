@@ -34,7 +34,7 @@
         <test-method status="PASS" signature="endReport()[pri:0, instance:mobileAutomation.Ebay@1d56113]" name="endReport" is-config="true" duration-ms="562" started-at="2018-03-26T15:57:27Z" finished-at="2018-03-26T15:57:27Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- endReport -->
+        </test-method><!-- endReport -->
       </class> <!-- mobileAutomation.Ebay -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

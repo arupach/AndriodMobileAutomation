@@ -24,6 +24,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
+import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 import java.io.File;
 import java.io.FileInputStream;
@@ -42,6 +43,8 @@ public class Ebay {
 	FileInputStream fileInput = null;
 	protected AndroidDriver<AndroidElement> driver = null;
 	DesiredCapabilities dc = new DesiredCapabilities();
+	
+	ResourceBundle resourceBundle = ResourceBundle.getBundle("OR.Properties");
 
 	@BeforeTest
 	public void setUp() throws MalformedURLException {
@@ -54,6 +57,7 @@ public class Ebay {
 		dc.setCapability(MobileCapabilityType.UDID, "ZY22232ZB2");
 		driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), dc);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
 	}
 
 	@BeforeTest
@@ -112,7 +116,7 @@ public class Ebay {
 	}
 		
 	public boolean LoginEbay() throws IOException{
-		System.out.println(" I am in LoginEbay");
+		//System.out.println(" I am in LoginEbay");
 		File file = new File(System.getProperty("user.dir")+"\\src\\com\\config\\OR.properties");
 		fileInput = new FileInputStream(file);
 		Properties prop = new Properties();
@@ -142,7 +146,7 @@ public class Ebay {
 
 	public boolean StartEbayApp() throws IOException{
 		
-		System.out.println(" I am in StartEbayApp");
+		//System.out.println(" I am in StartEbayApp");
 		File file = new File(System.getProperty("user.dir")+"\\src\\com\\config\\OR.properties");
 		fileInput = new FileInputStream(file);
 		Properties prop = new Properties();
@@ -167,7 +171,7 @@ public class Ebay {
 
 	public boolean SearchAndPurchase() throws IOException
 	{
-		System.out.println(" I am in SearchAndPurchase");
+		//System.out.println(" I am in SearchAndPurchase");
 		File file = new File(System.getProperty("user.dir")+"\\src\\com\\config\\OR.properties");
 		fileInput = new FileInputStream(file);
 		Properties prop = new Properties();
