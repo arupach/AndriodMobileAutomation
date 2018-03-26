@@ -80,7 +80,7 @@ public class Ebay {
 	public void EbayAppLogin() throws IOException {
 
 		//LoginEbay();		
-		logger = extent.startTest("LoginEbay- Log in to App ");
+		logger = extent.startTest("LoginEbay- Logged in to App ");
 		Assert.assertTrue(LoginEbay(),"User is logged in to app");
 		logger.log(LogStatus.PASS, "Test Case passed");
 		extent.endTest(logger);
