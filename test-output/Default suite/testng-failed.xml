@@ -3,15 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="mobileAutomation.Ebay">
+      <class name="mobileAutomation.MobileAutomationTest">
         <methods>
-          <include name="setUp"/>
-          <include name="EbayAppLogin"/>
-          <include name="EbayAppStart"/>
-          <include name="EbayAppPurchase"/>
-          <include name="EbayAppTransactions4"/>
+          <include name="testClassSetUp"/>
+          <include name="ebayAppPlaceOrder"/>
+          <include name="testCaseTearDown"/>
+          <include name="testCasesetup"/>
+          <include name="testClassTearDown"/>
         </methods>
-      </class> <!-- mobileAutomation.Ebay -->
+      </class> <!-- mobileAutomation.MobileAutomationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

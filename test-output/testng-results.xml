@@ -1,41 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="89199" started-at="2018-03-26T10:25:58Z" finished-at="2018-03-26T10:27:27Z">
+  <suite name="Default suite" duration-ms="78433" started-at="2018-03-28T18:43:10Z" finished-at="2018-03-28T18:44:28Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="89199" started-at="2018-03-26T10:25:58Z" finished-at="2018-03-26T10:27:27Z">
-      <class name="mobileAutomation.Ebay">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:mobileAutomation.Ebay@1d56113]" name="setUp" is-config="true" duration-ms="5179" started-at="2018-03-26T15:55:58Z" finished-at="2018-03-26T15:56:03Z">
+    <test name="Default test" duration-ms="78433" started-at="2018-03-28T18:43:10Z" finished-at="2018-03-28T18:44:28Z">
+      <class name="mobileAutomation.MobileAutomationTest">
+        <test-method status="PASS" signature="testClassSetUp()[pri:0, instance:mobileAutomation.MobileAutomationTest@adede5]" name="testClassSetUp" is-config="true" duration-ms="453" started-at="2018-03-29T00:13:10Z" finished-at="2018-03-29T00:13:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="startTest()[pri:0, instance:mobileAutomation.Ebay@1d56113]" name="startTest" is-config="true" duration-ms="499" started-at="2018-03-26T15:56:03Z" finished-at="2018-03-26T15:56:04Z">
+        </test-method> <!-- testClassSetUp -->
+        <test-method status="PASS" signature="testCasesetup()[pri:0, instance:mobileAutomation.MobileAutomationTest@adede5]" name="testCasesetup" is-config="true" duration-ms="5018" started-at="2018-03-29T00:13:11Z" finished-at="2018-03-29T00:13:16Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- startTest -->
-        <test-method status="PASS" signature="EbayAppStart()[pri:1, instance:mobileAutomation.Ebay@1d56113]" name="EbayAppStart" duration-ms="14266" started-at="2018-03-26T15:56:04Z" finished-at="2018-03-26T15:56:18Z">
+        </test-method> <!-- testCasesetup -->
+        <test-method status="PASS" signature="ebayAppPlaceOrder()[pri:1, instance:mobileAutomation.MobileAutomationTest@adede5]" name="ebayAppPlaceOrder" duration-ms="68502" started-at="2018-03-29T00:13:16Z" description="To verify whether app is able to place order or not" finished-at="2018-03-29T00:14:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EbayAppStart -->
-        <test-method status="PASS" signature="EbayAppLogin()[pri:2, instance:mobileAutomation.Ebay@1d56113]" name="EbayAppLogin" duration-ms="38731" started-at="2018-03-26T15:56:18Z" finished-at="2018-03-26T15:56:57Z">
+        </test-method> <!-- ebayAppPlaceOrder -->
+        <test-method status="PASS" signature="testCaseTearDown()[pri:0, instance:mobileAutomation.MobileAutomationTest@adede5]" name="testCaseTearDown" is-config="true" duration-ms="3956" started-at="2018-03-29T00:14:24Z" finished-at="2018-03-29T00:14:28Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EbayAppLogin -->
-        <test-method status="PASS" signature="EbayAppPurchase()[pri:3, instance:mobileAutomation.Ebay@1d56113]" name="EbayAppPurchase" duration-ms="25136" started-at="2018-03-26T15:56:57Z" finished-at="2018-03-26T15:57:22Z">
+        </test-method> <!-- testCaseTearDown -->
+        <test-method status="PASS" signature="testClassTearDown()[pri:0, instance:mobileAutomation.MobileAutomationTest@adede5]" name="testClassTearDown" is-config="true" duration-ms="472" started-at="2018-03-29T00:14:28Z" finished-at="2018-03-29T00:14:28Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EbayAppPurchase -->
-        <test-method status="PASS" signature="EbayAppTransactions4()[pri:4, instance:mobileAutomation.Ebay@1d56113]" name="EbayAppTransactions4" duration-ms="4779" started-at="2018-03-26T15:57:22Z" finished-at="2018-03-26T15:57:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EbayAppTransactions4 -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:mobileAutomation.Ebay@1d56113]" name="endReport" is-config="true" duration-ms="562" started-at="2018-03-26T15:57:27Z" finished-at="2018-03-26T15:57:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method><!-- endReport -->
-      </class> <!-- mobileAutomation.Ebay -->
+        </test-method> <!-- testClassTearDown -->
+      </class> <!-- mobileAutomation.MobileAutomationTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
